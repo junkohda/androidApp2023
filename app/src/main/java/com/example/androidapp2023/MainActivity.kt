@@ -56,12 +56,9 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun MainScreen(navController: NavController) {
-    val customStrings = listOf("ループ", "Banana", "Cherry", "Date", "Elderberry",
-        "Fig", "Grape", "Honeydew", "Ice cream bean", "Jackfruit",
-        "Kiwi", "Lemon", "Mango", "Nectarine", "Orange",
-        "Pineapple", "Quince", "Raspberry", "Strawberry", "Tomato")
+    val customStrings = listOf("人判定", "じゃんけん（一発勝負）", "FizzBuzz", "お釣り金額", "偶数表示", "掛け算表", "最大公約数")
 
-    val tableData = (1..20).mapIndexed { index, _ ->
+    val tableData = (1..customStrings.size).mapIndexed { index, _ ->
         index to customStrings[index]
     }
     val column1Weight = .3f // 30%
@@ -109,10 +106,7 @@ fun RowScope.TableCell(
 }
 
 
-@Composable
-fun DetailScreen(itemId: Int) {
-    Text(text = "Detail Screen for item $itemId")
-}
+
 
 @Preview(showBackground = true)
 @Composable
